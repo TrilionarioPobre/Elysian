@@ -1,9 +1,8 @@
 <?php
-
 define('HOST', '127.0.0.1');
-define('USUARIO', 'root')
-define('SENHA', '')
-define('DB', 'login')
+define('USUARIO', 'root');
+define('SENHA', '');
+define('DB', 'elysian');
 //conferir hash
 //echo password_verify($senha, '');
 

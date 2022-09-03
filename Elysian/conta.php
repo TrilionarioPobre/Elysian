@@ -1,11 +1,13 @@
-
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Elysium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Elysian</title>
 	<link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="img/img.css">
 <style>
@@ -113,14 +115,23 @@
   }
 </style>
 <body>
-  <form action="" method="post">
+	  <?php
+      if($_SESSION['email_existe']); 
+      ?>
+      <div class="notificação">
+      	<p>O usuario escolhido já existe. Informe outro e tente novamente.</p>
+      </div>
+      <?php
+  		unset($_SESSION['email_existe']);
+      ?> 
+  <form action="cadastro.php" method="post">
     <div class="login">
       <h1>Criar sua Conta da Elysian</h1>
     </div>
     <div class="container">
       <input class="Nome" type="text" name="nome" placeholder="Nome" style="width: 200px;" required>        
       <input class="Sobrenome" type="text" name="sobrenome" placeholder="Sobrenome" style="width: 200px;" required><br>
-      <input class="NomeUsuario" type="text" name="email" placeholder="Nome de Usuário" style="width: 425px;" required><br>        
+      <input class="NomeUsuario" type="text" name="email" placeholder="Nome de Usuário" style="width: 425px;" required><br>       
       <div class="sub1">
         Você pode usar letras, números e pontos finais
       </div>
