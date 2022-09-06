@@ -1,0 +1,88 @@
+body {
+    background: #295872;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+  }
+form {border:3px solid black;}
+input[type=text], input[type=password] {
+  	width: 100%;
+  	padding: 12px 20px;
+  	display: inline-block;
+  	border: 1px solid #357599;
+  	box-sizing: border-box;
+}
+button {
+	background-color: #357599;
+  	color: white;
+  	padding: 14px 20px;
+  	margin: 8px 0;
+  	border: none;
+  	cursor: pointer;
+  	width: 100%;
+}
+#menu-h ul{
+    list-style: none;
+    overflow: hidden;
+    padding: 0px;
+    background-color: black;
+}
+
+#menu-h ul li{
+    display: inline;
+    transition: background .4s;
+}
+
+#menu-h ul li a{
+    color: #fff;
+    padding: 30px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#menu-h ul li:hover{
+    background-color: #67a8cd;
+}
+
+.active {
+    background-color: #357599;
+    display: inline-block;
+}
+.container {
+  	padding: 16px;
+}
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding-top: 60px;
+}
+.imgcontainer {
+	text-align: center;
+  	position: center;
+}
+.login {
+	padding: 12px 20px;
+}
+img.avatar {
+  width: 200px;
+  border-radius: 300px;
+}
+span.psw {
+  float: right;
+  padding: 10px 18px;
+  width: auto;
+}
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
