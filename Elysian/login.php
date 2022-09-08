@@ -12,11 +12,11 @@
     	<img style="width: 100%; height: 400px;" src="img/banner.jpeg">
 <nav id="menu-h">
         <ul>
-            <li style="float: left;"><a href="index.html">Início</a></li>
-            <li style="float: left;"><a href="Download.html">Download</a></li>
-            <li style="float: left;"><a href="Atualizações.html">Atualizações</a></li>
-            <li style="float: left;"><a href="Feedback.html">Feedback</a></li>
-            <li class="active" style="float: right;"><a href="login.html">Login</a></li>
+            <li style="float: left;"><a href="index.php">Início</a></li>
+            <li style="float: left;"><a href="download.php">Download</a></li>
+            <li style="float: left;"><a href="atualizacoes.php">Atualizações</a></li>
+            <li style="float: left;"><a href="feedback.php">Feedback</a></li>
+            <li class="active" style="float: right;"><a href="login.php">Login</a></li>
         </ul>
     </nav>
 <form action="" method="post" style="background-color: white;">
@@ -37,7 +37,7 @@
       		<input type="checkbox" name="remember"> Lembrar de mim
     	</label>
     	<span class="psw"><a href="Esqueceu.html">Esqueceu a senha?</a></span>
-      <p>Não tem uma conta?<a href="conta.html">Crie aqui!</a></p>
+      <p>Não tem uma conta?<a href="conta.php">Crie aqui!</a></p>
   </div>
 </form>
 </body>
