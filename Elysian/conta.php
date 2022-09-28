@@ -1,4 +1,4 @@
-<?php 
+<?php  
 session_start();
 ?>
 <!DOCTYPE html>
@@ -9,29 +9,21 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Elysian</title>
 	<link rel="stylesheet" href="css/styleconta.css">
+</head>
 <body>
-	  <?php
-      if($_SESSION['email_existe']); 
-      ?>
-      <div class="notificação">
-      	<p>O usuario escolhido já existe. Informe outro e tente novamente.</p>
-      </div>
-      <?php
-  		unset($_SESSION['email_existe']);
-      ?> 
   <form action="cadastro.php" method="post">
     <div class="login">
       <h1>Criar sua Conta da Elysian</h1>
     </div>
     <div class="container">
-      <input class="Nome" type="text" name="nome" placeholder="Nome" style="width: 200px;" required>        
-      <input class="Sobrenome" type="text" name="sobrenome" placeholder="Sobrenome" style="width: 200px;" required><br>
-      <input class="NomeUsuario" type="text" name="email" placeholder="Nome de Usuário" style="width: 425px;" required><br>       
+      <input class="Nome" type="text" name="nome" placeholder="Nome" style="width: 200px;">        
+      <input class="Sobrenome" type="text" name="sobrenome" placeholder="Sobrenome" style="width: 200px;"><br>
+      <input class="NomeUsuario" type="text" name="email" placeholder="Nome de Usuário" style="width: 425px;"><br>     
       <div class="sub1">
         Você pode usar letras, números e pontos finais
       </div>
-      <input class="Senha" type="password" name="senha" style="width: 200px;" placeholder="Senha" style="width: 200px;" required>
-      <input class="Senha2" type="password" name="senhaconfirmar" placeholder="Confirmar" style="width: 200px;" required><br>
+      <input class="Senha" type="password" name="senha" style="width: 200px;" placeholder="Senha" style="width: 200px;">
+      <input class="Senha2" type="password" name="senhaconfirmar" placeholder="Confirmar" style="width: 200px;"><br>
       <div class="sub2">
         Use oito ou mais caracteres com uma combinação de letras,<br> números e símbolos
       </div><br>

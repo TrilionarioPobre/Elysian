@@ -18,8 +18,12 @@ if($row['total'] == 1) {
 
 $sql = "INSERT INTO usuarios (nome, sobrenome, senha, email, data_cadastro) VALUES ('$nome', '$sobrenome', '$senha', '$email', NOW())";
 
+if ($conexao->query($sql) === TRUE) {
+	$_SESSION['status_cadastro'] = true;
+}
+
 $conexao->close();
 
-header('Location: conta.php');
+header('Location: login.php');
 exit;
 ?>

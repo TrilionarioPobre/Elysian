@@ -19,7 +19,7 @@
             <li class="active" style="float: right;"><a href="login.php">Login</a></li>
         </ul>
     </nav>
-<form action="" method="post" style="background-color: white;">
+<form action="entrar.php" method="post" style="background-color: white;">
 	
 	<div class="login">
 		<h1>Iniciar Sessão</h1>
@@ -32,7 +32,7 @@
 		<input type="text" placeholder="Nome de Usuário"name="email" required>
 	    <label for="senha"><b>Senha:</b></label><br>
     	<input type="password" placeholder="Senha" name="senha" required>
-    	<button type="submit">Login</button>
+    	<button name="sub" type="submit">Login</button>
     	<label>
       		<input type="checkbox" name="remember"> Lembrar de mim
     	</label>

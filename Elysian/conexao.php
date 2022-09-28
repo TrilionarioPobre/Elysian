@@ -6,4 +6,6 @@ define('DB', 'elysian');
 //conferir hash
 //echo password_verify($senha, '');
 
+$mysqli = new mysqli(HOST, USUARIO, SENHA, DB);
+
 $conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die('Não foi possivel conectar ao banco de dados');
