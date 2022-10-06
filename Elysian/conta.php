@@ -16,8 +16,7 @@ session_start();
       <h1>Criar sua Conta da Elysian</h1>
     </div>
     <div class="container">
-      <input class="Nome" type="text" name="nome" placeholder="Nome" style="width: 200px;">        
-      <input class="Sobrenome" type="text" name="sobrenome" placeholder="Sobrenome" style="width: 200px;"><br>
+      <input class="Nome" type="text" name="nome" placeholder="Nome" style="width: 200px;">
       <input class="NomeUsuario" type="text" name="email" placeholder="Nome de Usuário" style="width: 425px;"><br>     
       <div class="sub1">
         Você pode usar letras, números e pontos finais

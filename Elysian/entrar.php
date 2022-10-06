@@ -20,7 +20,6 @@ if ($quantidade == 1) {
 
 	$_SESSION['id'] = $usuario['id'];
 	$_SESSION['nome'] = $usuario['nome'];
-	$_SESSION['sobrenome'] = $usuario['sobrenome'];
 
 	header("Location: painel.php");
 } else {
