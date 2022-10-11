@@ -1,0 +1,18 @@
+.ui {
+  color: #e7e7e7;
+  font-family: "Bungee";
+  font-size: 4vw
+}
+
+.banner {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #382858;
+}
+
+.final {
+  background-color: #383838;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: white;
+}
