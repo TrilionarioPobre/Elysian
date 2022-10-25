@@ -51,9 +51,11 @@
       <div class="banner jumbotron jumbotron-fluid">
         <h1 class="ui text-center">Tenha uma boa viagem!</h1>
         <div class="text-center">
+        <a href="login.php">
         <button type="button" class="butao btn btn-success btn-lg mt-2">
           Download
         </button>
+        </a>
 </div>
       </div>
       <footer class="final fixed-bottom">

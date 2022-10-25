@@ -84,46 +84,13 @@ include('php.ini');
                 <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
               </div>
               <br>
-              <!-- <p class="text-center aaa">Não tem uma conta? <a href="registration.html">Crie aqui!</a></p> -->
+              <span class="psw"><a href="esqueceu.php">Esqueceu a senha?</a></span>
+              <p>Não tem uma conta?<a href="registration.php">Crie aqui!</a></p>
             </div>
-
           </form>
           </form>
         </div>
       </div>
-
-
-
-
-      <!-- <div class="login jumbotron jumbotron-fluid"> -->
-      <!--   <div class="login container"> -->
-      <!--     <h1 class="titulo text-center">Bem vindo de volta!</h1> -->
-      <!--     <form class="cadn container"> -->
-      <!---->
-      <!--       <div class="cad form-group"> -->
-      <!--         <h4 class="mano" for="InputEmail">Email address</h4> -->
-      <!--         <input type="email" class="form-control" id="eInputEmail" aria-describedby="emailHelp" placeholder="Enter email"> -->
-      <!--       </div> -->
-      <!---->
-      <!--       <div class="cad form-group"> -->
-      <!--         <h4 class="mano" for="InputPassword">Password</h4> -->
-      <!--         <input type="password" class="form-control" id="InputPassword" placeholder="Password"> -->
-      <!--       </div> -->
-      <!---->
-      <!--       <div class="aaa cad form-check"> -->
-      <!--         <div class=""> -->
-      <!--           <input type="checkbox" class="form-check-input" id="Check"> -->
-      <!--           <p class="form-check-label" for="Check">Lembrar de mim</p> -->
-      <!--         </div> -->
-      <!--         <div class="cad"> -->
-      <!--           <button type="submit" class="btn btn-primary btn-lg">Entrar</button> -->
-      <!--         </div> -->
-      <!--         <p class="cad aaa">Não tem uma conta? <a href="registration.html">Crie aqui!</a></p> -->
-      <!--       </div> -->
-      <!---->
-      <!--     </form> -->
-      <!--   </div> -->
-      <!-- </div> -->
       <h3 class="star text-center">Boas vindas ao Inferno!</h3>
       <footer class="fixed-bottom final">
         <h6 class="text-center">Copyright © 2022 Elysian Inc. All rights reserved.</h6>

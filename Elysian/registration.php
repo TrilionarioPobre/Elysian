@@ -66,7 +66,6 @@
           </nav>
         </div>
       </header>
-
       <div class="banner jumbotron jumbotron-fluid">
         <div class="login container">
           <h1 class="bg-create text-center">Criar uma conta</h1>
