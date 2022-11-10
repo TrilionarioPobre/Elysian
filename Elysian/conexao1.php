@@ -1,8 +1,8 @@
 <?php
-define('HOST', 'localhost');
-define('USUARIO', 'id19695346_vini');
-define('SENHA', 'Vi76913031g_');
-define('DB', 'id19695346_elysian');
+define('HOST', '127.0.0.1');
+define('USUARIO', 'root');
+define('SENHA', '');
+define('DB', 'elysian');
 //conferir hash
 //echo password_verify($senha, '');
 

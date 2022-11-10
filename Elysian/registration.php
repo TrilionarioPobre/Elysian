@@ -69,7 +69,7 @@
       <div class="banner jumbotron jumbotron-fluid">
         <div class="login container">
           <h1 class="bg-create text-center">Criar uma conta</h1>
-          <form action="cadastro.php" method="post" class="cadn">
+          <form action="cadastro.php" method="post" class="cadn" autocomplete="off">
             <div class="form-group">
             <div class="cad form-group">
               <h5 class="titulo" name="text" for="InputUsername">Nome</h5>
@@ -84,11 +84,7 @@
             </div>
             <div class="cad form-check">
               <input type="checkbox" class="form-check-input" id="Check" onclick="mostrar_senha()">
-              <p class="titulo form-check-label" for="Check">mostrar senha</p>
-            </div>
-            <div class="cad form-check">
-              <input type="checkbox" class="form-check-input" id="Check">
-              <p class="titulo form-check-label" for="Check">Lembrar de mim</p>
+              <h5 class="titulo" for="Check">Mostrar Senha</p>
             </div>
             <button type="submit" class="cad btn btn-primary">Enviar</button>
           </form>

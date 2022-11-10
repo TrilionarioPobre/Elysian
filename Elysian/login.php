@@ -14,6 +14,22 @@ include('php.ini');
     <script src="assets/js/fontawesome.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue">
+    <script>
+      function mostrar_senha(){
+        var x = document.getElementById("InputPassword");
+        var y = document.getElementById("AltPassword");
+        if (x.type === "password"){
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+        if (y.type === "password"){
+          y.type = "text";
+        } else {
+          y.type = "password";
+        }
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -56,7 +72,7 @@ include('php.ini');
       <div class="login jumbotron jumbotron-fluid">
         <div class="login container">
           <h1 class="titulo text-center">Login</h1>
-          <form action="entrar.php" method="post" class="cadn container">
+          <form action="entrar.php" method="post" class="cadn container" autocomplete="off">
             <?php
             if(isset($_SESSION['nao_autenticado'])){
               echo('<div>
@@ -66,28 +82,27 @@ include('php.ini');
             unset($_SESSION['nao_autenticado']);
             ?>
             <div class="cad form-group">
-              <h4 class="mano" for="InputEmail">Email address</h4>
-              <input name="email" type="email" class="form-control" id="eInputEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
+              <h4 class="mano" for="InputEmail">Email</h4>
+              <input name="email" type="email" class="form-control" id="eInputEmail" aria-describedby="emailHelp" placeholder="Digite seu Email" required>
             </div>
 
             <div class="cad form-group">
-              <h4 class="mano" for="InputPassword">Password</h4>
-              <input name="senha" type="password" class="form-control" id="InputPassword" placeholder="Password" required>
+              <h4 class="mano" for="InputPassword">Senha</h4>
+              <input name="senha" type="password" class="form-control" id="InputPassword" placeholder="Digite sua Senha" required>
             </div>
-
-            <div class="aaa cad form-check">
-              <!-- <div class=""> -->
-                <!-- <input type="checkbox" class="form-check-input" id="Check"> -->
-                <!-- <p class="form-check-label" for="Check">Lembrar de mim</p> -->
-              <!-- </div> -->
+            <div class="cad form-group">
+            <div class="cad form-check">
+              <input type="checkbox" class="form-check-input" id="Check" onclick="mostrar_senha()">
+              <h4 class="mano" for="Check">Mostrar Senha</h6>
+            </div>
+            <div>
+              <h4 class="mano"><a href="esqueceu.php">Esqueceu a senha?</a></h4>
+              <h4 class="mano">Não tem uma conta?<a href="registration.php">Crie aqui!</a></h4>
+            </div>
+          </div>
               <div class="cad">
                 <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
               </div>
-              <br>
-              <span class="psw"><a href="esqueceu.php">Esqueceu a senha?</a></span>
-              <p>Não tem uma conta?<a href="registration.php">Crie aqui!</a></p>
-            </div>
-          </form>
           </form>
         </div>
       </div>
