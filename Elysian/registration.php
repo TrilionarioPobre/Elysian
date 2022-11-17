@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -28,7 +26,51 @@
           y.type = "password";
         }
       }
+        var myInput = document.getElementById("InputPassword");
+        var letra = document.getElementById("letra");
+        var capital = document.getElementById("capital");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+        myInput.onfocus = function(){
+          document.getElementById("mensagem").style.display = "block";
+        }
+        myInput.onblur = function(){
+          document.getElementById("mensagem").style.display = "none";
+        }
+        myInput.onkeyup = function() {
+          var lowerCaseLetters = /[a-z]/g;
+          if(myInput.value.match(lowerCaseLetters)) {
+            
+        } else {
+          letra.classList.remove("valid");
+          letra.classList.add("invalid");
+        }
+          }
     </script>
+    <style>
+      #mensagem {
+        color: white;
+      }
+      .valid {
+        color: green;
+      }
+
+      .valid:before {
+        position: relative;
+        left: -35px;
+        content: "✔";
+      }
+
+      .invalid {
+        color: red;
+      }
+
+      .invalid:before {
+        position: relative;
+        left: -35px;
+        content: "✖";
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -80,13 +122,21 @@
             </div>
             <div class="cad form-group">
               <h5 class="titulo" name="senha" for="InputPassword">Senha</h5>
-              <input name="senha" type="password" class="form-control" id="InputPassword" required>
+              <input name="senha" type="password" class="form-control" id="InputPassword" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$])[a-zA-Z0-9@#$]{8,50}$" required>
             </div>
             <div class="cad form-check">
               <input type="checkbox" class="form-check-input" id="Check" onclick="mostrar_senha()">
               <h5 class="titulo" for="Check">Mostrar Senha</p>
             </div>
             <button type="submit" class="cad btn btn-primary">Enviar</button>
+            <div id="mensagem">
+              <h3>Senha deve ter</h3>
+              <p id="letra" class="">Uma letra minúscula</p>
+              <p id="maiuscula" class="">Uma letra maiúscula</p>
+              <p id="numero" class="">Um número</p>
+              <p id="caracteres" class="">8 caracteres</p>
+              <p id="carespercial">1 caractere especial</p>
+            </div>
           </form>
         </div>
       </div>
