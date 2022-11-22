@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <title>Cadastro - Elysian</title>
@@ -11,45 +11,13 @@
     <script src="assets/js/fontawesome.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue">
-    <script>
-      function mostrar_senha(){
-        var x = document.getElementById("InputPassword");
-        var y = document.getElementById("AltPassword");
-        if (x.type === "password"){
-          x.type = "text";
-        } else {
-          x.type = "password";
-        }
-        if (y.type === "password"){
-          y.type = "text";
-        } else {
-          y.type = "password";
-        }
-      }
-        var myInput = document.getElementById("InputPassword");
-        var letra = document.getElementById("letra");
-        var capital = document.getElementById("capital");
-        var number = document.getElementById("number");
-        var length = document.getElementById("length");
-        myInput.onfocus = function(){
-          document.getElementById("mensagem").style.display = "block";
-        }
-        myInput.onblur = function(){
-          document.getElementById("mensagem").style.display = "none";
-        }
-        myInput.onkeyup = function() {
-          var lowerCaseLetters = /[a-z]/g;
-          if(myInput.value.match(lowerCaseLetters)) {
-            
-        } else {
-          letra.classList.remove("valid");
-          letra.classList.add("invalid");
-        }
-          }
-    </script>
     <style>
       #mensagem {
-        color: white;
+        display:none;	
+  	color: #000;
+  	position: relative;
+  	padding: 20px;
+  	margin-top: 10px;
       }
       .valid {
         color: green;
@@ -144,5 +112,75 @@
       <footer class="final fixed-bottom">
         <h6 class="text-center">Copyright © 2022 Elysian Inc. All rights reserved.</h6>
       </footer>
+	<script>
+      function mostrar_senha(){
+        var x = document.getElementById("InputPassword");
+        var y = document.getElementById("AltPassword");
+        if (x.type === "password"){
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+        if (y.type === "password"){
+          y.type = "text";
+        } else {
+          y.type = "password";
+        }
+      }
+        var myInput = document.getElementById("InputPassword");
+        var letra = document.getElementById("letra");
+        var maiuscula = document.getElementById("maiuscula");
+        var numero = document.getElementById("numero");
+        var caracteres = document.getElementById("caracteres");
+	var special = document.getElementById("carespercial")
+        myInput.onfocus = function(){
+          document.getElementById("mensagem").style.display = "block";
+        }
+        myInput.onblur = function(){
+          document.getElementById("mensagem").style.display = "none";
+        }
+        myInput.onkeyup = function() {
+          var lowerCaseLetters = /[a-z]/g;
+          if(myInput.value.match(lowerCaseLetters)) {
+          letra.classList.remove("invalid");
+    	  letra.classList.add("valid");
+        } else {
+          letra.classList.remove("valid");
+          letra.classList.add("invalid");
+        }
+	var upperCaseLetters = /[A-Z]/g;
+  	if(myInput.value.match(upperCaseLetters)) {  
+    	maiuscula.classList.remove("invalid");
+    	maiuscula.classList.add("valid");
+  	} else {
+    	maiuscula.classList.remove("valid");
+    	maiuscula.classList.add("invalid");
+  	}
+  	var numbers = /[0-9]/g;
+  	if(myInput.value.match(numbers)) {  
+    	numero.classList.remove("invalid");
+    	numero.classList.add("valid");
+ 	 } else {
+    	numero.classList.remove("valid");
+    	numero.classList.add("invalid");
+  	}
+  
+  	if(myInput.value.length >= 8) {
+    	caracteres.classList.remove("invalid");
+    	caracteres.classList.add("valid");
+  	} else {
+    	caracteres.classList.remove("valid");
+   	caracteres.classList.add("invalid");
+          }
+	var specials = /\W|_/;
+	if(myInput.value.match(specials)) {
+    	special.classList.remove("invalid");
+    	special.classList.add("valid");
+  	} else {
+    	special.classList.remove("valid");
+   	special.classList.add("invalid");
+          }
+	}
+    </script>
   </body>
 </html>
