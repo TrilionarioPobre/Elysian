@@ -1,114 +1,165 @@
-<?php
-include('php.ini');
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <title>Login - Elysian</title>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/img/icon.png" rel="icon" >
-    <link href="assets/css/login.css" rel="stylesheet">
-    <link href="assets/css/bootstrap.css" rel="stylesheet"
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/fontawesome.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <title>Elysian</title>
+<style>
+    #mensagem {
+        color: white;
+    }
+    .valid {
+        color: #aa40f4;
+    }
+    .valid:before {
+        position: relative;
+        left: -1px;
+        content: "✔";
+    }
+    .invalid {
+        color: #333;
+    }
+    .invalid:before {
+        position: relative;
+        left: -1px;
+        color: #aa40f4;
+        content: "X";
+    }   
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
+                <span style="float: right;" class="title"><a style="text-decoration: none; color:#aa40f4; " href="index.php">Início</a></span>
+                <form method="post" action="entrar.php" autocomplete="off">
+                    <div class="input-field">
+                        <input name="email" type="email" placeholder="Coloque seu email" pattern=".{10,60}" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input name="senha" type="password" class="password" placeholder="Coloque sua senha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$])[a-zA-Z0-9@#$]{8,50}$" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Lembre de mim</label>
+                        </div>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Não tem conta?
+                        <a  class="text signup-link">Registrar Agora</a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form signup">
+                <span class="title">Registrar</span>
+                <span style="float: right;" class="title"><a style="text-decoration: none; color:#aa40f4; " href="index.php">Início</a></span>
+                <form method="post" action="cadastro.php" autocomplete="off">
+                    <div class="input-field">
+                        <input name="nome" pattern=".{4,20}"type="text" placeholder="Coloque seu apelido" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input name="email" type="email" placeholder="Coloque seu email" pattern=".{10,60}" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input name="senha" id="InputPassword" type="password" class="password" placeholder="Crie uma senha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$])[a-zA-Z0-9@#$]{8,50}$" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <div id="mensagem">
+                        <p id="letra">Uma letra minúscula</p>
+                        <p id="maiuscula">Uma letra maiúscula</p>
+                        <p id="numero">Um número</p>
+                        <p id="caracteres">8 caracteres</p>
+                        <p id="carespercial">1 caractere especial</p>
+                    </div>
+                    <div class="input-field button">
+                        <input type="submit" value="Inscrever-se">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Já tem conta?
+                        <a class="text login-link">Entrar Agora</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/login.js"></script>
     <script>
-      function mostrar_senha(){
-        var x = document.getElementById("InputPassword");
-        var y = document.getElementById("AltPassword");
-        if (x.type === "password"){
-          x.type = "text";
-        } else {
-          x.type = "password";
+        var myInput = document.getElementById("InputPassword");
+        var letra = document.getElementById("letra");
+        var maiuscula = document.getElementById("maiuscula");
+        var numero = document.getElementById("numero");
+        var caracteres = document.getElementById("caracteres");
+	    var special = document.getElementById("carespercial")
+        myInput.onfocus = function(){
+            document.getElementById("mensagem").style.display = "block";
         }
-        if (y.type === "password"){
-          y.type = "text";
-        } else {
-          y.type = "password";
+        myInput.onblur = function(){
+          document.getElementById("mensagem").style.display = "block";
         }
-      }
-    </script>
-  </head>
-  <body>
-    <header>
-      <header>
-        <div class="container-fluid px-0">
-          <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
-            <div class="container-fluid">
-              <a href="index.html">
-                <img class="navbar-brand" src="assets/img/icon.png"
-                width="30px">
-              </a>
-              <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.php">HOME</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="download.php">GET ELYSIAN</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="registration.php">REGISTRAR</a>
-                </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
-
-      </header>
-
-      <div class="login jumbotron jumbotron-fluid">
-        <div class="login container">
-          <h1 class="titulo text-center">Login</h1>
-          <form action="entrar.php" method="post" class="cadn container" autocomplete="off">
-            <?php
-            if(isset($_SESSION['nao_autenticado'])){
-              echo('<div>
-              <h1>Falha ao logar! Email ou senha incorretos.</h1>
-            </div>');
+        myInput.onkeyup = function() {
+          var lowerCaseLetters = /[a-z]/g;
+          if(myInput.value.match(lowerCaseLetters)) {
+          letra.classList.remove("invalid");
+    	  letra.classList.add("valid");
+          } else {
+          letra.classList.remove("valid");
+          letra.classList.add("invalid");
+          }
+	      var upperCaseLetters = /[A-Z]/g;
+  	      if(myInput.value.match(upperCaseLetters)) {  
+    	    maiuscula.classList.remove("invalid");
+    	    maiuscula.classList.add("valid");
+  	      } else {
+    	    maiuscula.classList.remove("valid");
+    	    maiuscula.classList.add("invalid");
+  	      }
+          var numbers = /[0-9]/g;
+          if(myInput.value.match(numbers)) {  
+            numero.classList.remove("invalid");
+            numero.classList.add("valid");
+          } else {
+              numero.classList.remove("valid");
+              numero.classList.add("invalid");
             }
-            unset($_SESSION['nao_autenticado']);
-            ?>
-            <div class="cad form-group">
-              <h4 class="mano" for="InputEmail">Email</h4>
-              <input name="email" type="email" class="form-control" id="eInputEmail" aria-describedby="emailHelp" placeholder="Digite seu Email" required>
-            </div>
-
-            <div class="cad form-group">
-              <h4 class="mano" for="InputPassword">Senha</h4>
-              <input name="senha" type="password" class="form-control" id="InputPassword" placeholder="Digite sua Senha" required>
-            </div>
-            <div class="cad form-group">
-            <div class="cad form-check">
-              <input type="checkbox" class="form-check-input" id="Check" onclick="mostrar_senha()">
-              <h4 class="mano" for="Check">Mostrar Senha</h6>
-            </div>
-            <div>
-              <h4 class="mano"><a href="esqueceu.php">Esqueceu a senha?</a></h4>
-              <h4 class="mano">Não tem uma conta?<a href="registration.php">Crie aqui!</a></h4>
-            </div>
-          </div>
-              <div class="cad">
-                <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
-              </div>
-          </form>
-        </div>
-      </div>
-      <h3 class="star text-center">Boas vindas ao Inferno!</h3>
-      <footer class="fixed-bottom final">
-        <h6 class="text-center">Copyright © 2022 Elysian Inc. All rights reserved.</h6>
-      </footer>
-  </body>
+          
+          if(myInput.value.length >= 8) {
+            caracteres.classList.remove("invalid");
+            caracteres.classList.add("valid");
+            } else {
+              caracteres.classList.remove("valid");
+              caracteres.classList.add("invalid");
+            }
+          var specials = /\W|_/;
+          if(myInput.value.match(specials)) {
+              special.classList.remove("invalid");
+              special.classList.add("valid");
+            } else {
+              special.classList.remove("valid");
+              special.classList.add("invalid");
+            }
+          }
+    </script>
+</body>
 </html>

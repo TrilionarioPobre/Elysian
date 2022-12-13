@@ -1,3 +1,7 @@
+<?php
+include('protect.php');
+header("refresh: 1201");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -21,6 +25,8 @@
         <li><a class="alt" href="#skills">Plataformas</a></li>
         <li><a class="alt" href="#about">Sobre</a></li>
         <li><a href="#contact">Download</a></li>
+        <li><a href="controlpanel.php">Painel</a></li>
+        <li><a href="saida.php">Sair</a></li>
       </ul>
     </div>
   </nav>
@@ -148,7 +154,7 @@
         <div class="topic">Cansado de não conseguir o método ideal para aprender inglês?</div>
         <p class="copy">Fique tranquilo, pois aqui é o <b>lugar certo</b>, você não precisará mais se esforçar <b>em busca</b> de um material que realmente tenha valor, pois aqui você já <u>o encontrou!</u> Venha conosco e <u>baixe agora</u> ELYSIAN e aprenda inglês de forma definitiva, sem se cansar, pois aqui você <b>SE DIVERTE ENQUANTO APRENDE!</b></p>
         <div class="button">
-          <a href="download.php"><button>DOWNLOAD</button></a>
+          <a href="paneldownload.php"><button>DOWNLOAD</button></a>
         </div>
       </div>
     </div>

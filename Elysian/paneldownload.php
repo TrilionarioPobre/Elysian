@@ -1,3 +1,7 @@
+<?php
+include('protect.php');
+header("refresh: 1201");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -6,18 +10,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elysian</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
-    <link rel="stylesheet" href="assets/css/download.css" />
-    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/download.css">
+    <link rel="stylesheet" href="assets/css/index.css">
   </head>
   <body>
   <nav>
     <div class="menu">
       <div class="logo">
-        <a href="index.php">Elysian</a>
+        <a href="panelindex.php">Elysian</a>
       </div>
       <ul>
-        <li><a href="index.php">Início</a></li>
-        <li><a href="Login.php">Login</a></li>
+        <li><a href="controlpanel.php">Painel</a></li>
+        <li><a href="saida.php">Sair</a></li>
       </ul>
     </div>
   </nav>
@@ -32,7 +36,7 @@
             <h1>
               Próximo da Fluência no Inglês.
             </h1>
-            <a href="login.php" class="button">Baixar Agora</a>
+            <a href="#" class="button">Baixar Agora</a>
           </div>
         </div>
       </div>
